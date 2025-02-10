@@ -7,7 +7,7 @@ function sayMyName (){
 }
 
 // sayMyName    reference
-// sayMyName()
+// sayMyName()   function call
 
 // function add2Nums (num1, num2){
 //     console.log(num1 + num2);   
