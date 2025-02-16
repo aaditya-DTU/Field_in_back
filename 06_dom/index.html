@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+            background-color: #534848;
+            color: white;
+        }
+    </style>
+</head>
+<body  class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM learning on chai and code</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, maiores.</p>
+    </div>
+</body>
+</html>
+
+
+<!-- document.getElementById
+document.getElementByClassName
+document.getElementByName
+document.getElementByTagName -->
+
+<!-- document.getElementById().getAttribute('id')  -->
+<!-- in documentation "className" refers "class" -->
+
+
+<!-- How to extract content from the html  -->
+<!-- .textContent is used to extract content from that element  -->
+<!-- textContent : returns all text content. If a tag has display none, it return that element content also-->
+
+
+<!-- .innerHTML gives same result as above -->
+<!-- innerHTML: returns all html nodes  -->
+
+
+<!-- .innerText gives same result as above  -->
+<!-- innerText : gives the text in the selected node -->
+
+<!-- document.querySelector()....returns the first appearance of a tag  -->
+
+<!-- document.querySelectorAll()......returns a nodeList (not a pure array) of all the items from the tag  -->
+<!-- here we use foreach loop, not map  -->
+
+
+<!-- document.getElementByClassName()....returns all the tag which have that class in a HTML collection  -->
+<!-- to access elements in a HTML collection we have to convert it into array first  -->
+<!-- Array.from(tempClassList)  -->
