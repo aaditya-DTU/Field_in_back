@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    // setTimeout(function (){                  // run after 2 secs once
+    //     console.log("Aaditya");
+    // }, 2000)
+
+    const sayAadi = function () {
+        const heading = document.querySelector('h1')
+        heading.innerHTML = "Delhi is the capital of India"
+    }
+    // setTimeout(sayAadi, 2000)
+    const changeText = setTimeout(sayAadi, 2000)
+
+    // clearTimeout()
+    document.querySelector('#stop').addEventListener('click' , function(){
+        clearTimeout(changeText)
+        console.log("STOPPED");
+    })
+
+</script>
+
+</html>
