@@ -1,0 +1,46 @@
+<!-- Before "fetch" method...we use XMLHttpRequest method to take the data from the api -->
+<!-- XMLHttpRequest is heavily in AJAX programming -->
+
+<!-- STUDY FROM MDN ABOUT XMLHttpRequest -->
+<!-- Event target <--------XMLHttpRequestEventTarget <-----XMLHttpRequest -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    <div style="color: #fff;">
+        0       UNSENT     client has been created. open() not called yet
+        1       OPENED     open() has been called
+        2       HEADERS_RECEIVED    send() has been called, and header and status are avilable    
+        3       LOADING     downloading; responseText holds partial data. 
+        4       DONE        the opertion is complete
+    </div>
+</body>
+
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+    // to track status of api req
+    xhr.onreadystatechange = function(){       // executes every time when status change
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)        // most of the times url se data "string" m aata h....that's why we are typecasting it
+            // console.log(this.responseText);     //i am talking about current context
+            console.log(data.followers)
+        }
+    }
+    xhr.send()
+
+</script>
+
+// Create a card displaying photos and followers of the user
+
+// Talk about the V8 engine...how console log works 
+
+</html>
