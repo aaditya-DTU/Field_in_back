@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<!--What is Lexical Scoping given below-->
+<script>
+    // function init() {
+    //     let name = "Mozilla"; 
+    //     function displayName(){
+    //         // displayName() is the inner function, that forms the closure
+    //         console.log(name);  // use variable declared in the parent function
+    //     }
+    //     displayName();
+    // }
+    // init()
+
+    // function outer(){
+    //     let username = "hitesh"
+    //     function inner(){
+    //         console.log("inner : ", username);
+    //     }
+    //     inner()
+    // }
+    // outer()
+    // console.log("TOO OUTER", username);
+
+    function makeFunc(){
+        const name = "Mozilla";
+        function displayName(){
+            console.log(name);
+        }
+        return displayName;
+    }
+
+    const myFunc = makeFunc();    // due to lexical scoping displayName k saath uska outer function bhi myFunc m jaayega
+    myFunc();
+    
+</script>
+
+<script>
+    // document.getElementById('orange').addEventListener('click', ()=>{
+    //     document.body.style.backgroundColor = 'orange'
+    // })
+
+    // document.getElementById('green').addEventListener('click', ()=>{
+    //     document.body.style.backgroundColor = 'green'
+    // })
+
+    // problem solved by closure real life problem
+    
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').addEventListener('click', clickHandler('orange'))
+    document.getElementById('green').addEventListener('click', clickHandler('green'))
+</script>
+
+</html>
